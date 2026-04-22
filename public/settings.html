@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - ABD Sports Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>ABD Sports</h2>
+    </div>
+    <nav>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="dashboard.html" class="nav-link"><span class="nav-icon icon-dashboard"></span>Dashboard</a></li>
+        <li class="nav-item"><a href="products.html" class="nav-link"><span class="nav-icon icon-products"></span>Products</a></li>
+        <li class="nav-item"><a href="enquiries.html" class="nav-link"><span class="nav-icon icon-enquiries"></span>Enquiries</a></li>
+        <li class="nav-item"><a href="custom-jerseys.html" class="nav-link"><span class="nav-icon icon-jerseys"></span>Custom Jerseys</a></li>
+        <li class="nav-item"><a href="bulk-orders.html" class="nav-link"><span class="nav-icon icon-bulk"></span>Bulk Orders</a></li>
+        <li class="nav-item"><a href="promotions.html" class="nav-link"><span class="nav-icon icon-promotions"></span>Promotions</a></li>
+        <li class="nav-item"><a href="settings.html" class="nav-link active"><span class="nav-icon icon-settings"></span>Settings</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div>
+        <h1 style="font-size: 2rem; font-weight: 700; color: var(--text);">Business Settings</h1>
+        <p style="color: var(--text-light);">Control WhatsApp, website content, admin profile and security</p>
+      </div>
+      <div class="user-actions">
+        <div class="profile" id="profileBtn">
+          <div class="avatar">A</div>
+          <span>Admin</span>
+        </div>
+        <div class="profile" id="logoutBtn">
+          <span>Logout</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="stats-grid" style="margin-bottom: 40px;">
+      <div class="stat-card">
+        <div class="stat-icon icon-settings" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;"></div>
+        <div class="stat-number" id="settingsStatus">Saved</div>
+        <div class="stat-label">Status</div>
+      </div>
+    </div>
+
+    <div class="table-container" style="box-shadow: none; border: 1px solid #e1e5e9;">
+      <div id="settingsTabs">
+        <div class="settings-tab active" data-tab="business">Business Contact</div>
+        <div class="settings-tab" data-tab="website">Website Settings</div>
+        <div class="settings-tab" data-tab="profile">Admin Profile</div>
+        <div class="settings-tab" data-tab="security">Security</div>
+      </div>
+
+      <!-- Business Contact Tab -->
+      <div id="businessTab" class="settings-section active">
+        <div class="form-row">
+          <div class="form-group">
+            <label>WhatsApp Number</label>
+            <input type="tel" id="whatsapp" name="whatsapp">
+            <small>Format: +91xxxxxxxxxx</small>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+        <div class="form-group full">
+          <label>Instagram Handle</label>
+          <input type="text" id="instagram" name="instagram" placeholder="@abdsports">
+        </div>
+      </div>
+
+      <!-- Website Settings Tab -->
+      <div id="websiteTab" class="settings-section">
+        <div class="form-group full">
+          <label>Homepage Hero Banner</label>
+          <input type="text" id="heroBanner" name="heroBanner" placeholder="Summer Sale - 20% Off All Bats">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Featured Products Limit</label>
+            <input type="number" id="featuredLimit" name="featuredLimit" value="6" min="1" max="20">
+          </div>
+          <div class="form-group">
+            <label>Default Category</label>
+            <select id="defaultCategory" name="defaultCategory">
+              <option value="Cricket">Cricket</option>
+              <option value="Football">Football</option>
+              <option value="Jerseys">Jerseys</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin Profile Tab -->
+      <div id="profileTab" class="settings-section">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Admin Name</label>
+            <input type="text" id="adminName" name="adminName" value="Admin">
+          </div>
+          <div class="form-group">
+            <label>Business Role</label>
+            <input type="text" id="adminRole" name="adminRole" value="Owner">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Profile Photo</label>
+          <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*">
+          <div id="photoPreview" style="margin-top: 10px;"></div>
+        </div>
+      </div>
+
+      <!-- Security Tab -->
+      <div id="securityTab" class="settings-section">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Current Password</label>
+            <input type="password" id="currentPassword" name="currentPassword">
+          </div>
+          <div class="form-group">
+            <label>New Password</label>
+            <input type="password" id="newPassword" name="newPassword">
+          </div>
+        </div>
+        <div class="form-group full">
+          <label>Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Session Timeout (hours)</label>
+            <input type="number" id="sessionTimeout" name="sessionTimeout" value="24" min="1" max="168">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer" style="justify-content: flex-end; padding: 20px 0 0;">
+      <button id="saveSettingsBtn" class="btn btn-primary">Save All Settings</button>
+    </div>
+  </main>
+
+  <!-- Profile Modal -->
+  <div id="profileModal" class="modal">
+    <div class="modal-content" style="max-width: 500px;">
+      <div class="modal-header">
+        <h2>Admin Profile</h2>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="profileName">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Recent Activity</label>
+          <div id="recentActivity" style="font-size: 0.9rem; color: var(--text-light);">Loading...</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="hideModal('profileModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>initSettings();</script>
+</body>
+</html>
