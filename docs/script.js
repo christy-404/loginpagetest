@@ -25,12 +25,7 @@ function showToast(message, type = 'success') {
   }, 4000);
 }
 
-function checkAuth() {
-fetch('api/products', { credentials: 'include' })
-    .catch(() => {
-      window.location.href = 'login.html';
-    });
-}
+function checkAuth() {\n  // DISABLED for GitHub Pages static hosting - no backend API\n  return;\n}
 
 function loadNavActive() {
   const path = window.location.pathname.split('/').pop();
@@ -68,7 +63,7 @@ const response = await fetch('login', {
       const data = await response.json();
       
       if (data.success) {
-window.location.href = 'dashboard.html';
+window.location.href = './dashboard.html';
       } else {
         showError('password', data.message || 'Invalid credentials');
         btn.disabled = false;
@@ -155,10 +150,7 @@ async function initQuickActions() {
   if (logoutBtn) logoutBtn.addEventListener('click', logout);
 }
 
-async function logout() {
-await fetch('logout', { method: 'POST' });
-  window.location.href = 'login.html';
-}
+async function logout() {\n  // Static bypass - no backend\n  window.location.href = './login.html';\n}
 
 async function loadRealStats() {
   try {
