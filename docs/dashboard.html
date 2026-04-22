@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - ABD Sports Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+  <aside class="sidebar">
+    <div class="logo">
+      <h2>ABD Sports</h2>
+    </div>
+    <nav>
+      <ul class="nav-list">
+<li class="nav-item">
+          <a href="dashboard.html" class="nav-link active">
+            <span class="nav-icon icon-dashboard"></span>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="products.html" class="nav-link">
+            <span class="nav-icon icon-products"></span>
+            Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="enquiries.html" class="nav-link">
+            <span class="nav-icon icon-enquiries"></span>
+            Enquiries
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="custom-jerseys.html" class="nav-link">
+            <span class="nav-icon icon-jerseys"></span>
+            Custom Jerseys
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="bulk-orders.html" class="nav-link">
+            <span class="nav-icon icon-bulk"></span>
+            Bulk Orders
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="promotions.html" class="nav-link">
+            <span class="nav-icon icon-promotions"></span>
+            Promotions
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="settings.html" class="nav-link">
+            <span class="nav-icon icon-settings"></span>
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="header">
+      <div class="user-actions">
+        <div class="profile" id="logoutBtn">
+          <div class="avatar">A</div>
+          <span>Admin</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="welcome-hero">
+    <h1 class="welcome-title">ABD SPORTS Business Control Center</h1>
+      <p class="welcome-subtitle">Manage products, enquiries, custom jerseys, bulk orders, promotions, and operations from one executive dashboard. Complete business control.</p>
+        <a href="products.html" class="cta-button">
+        Add Your First Product
+      </a>
+    </section>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon icon-stats" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white;"></div>
+        <div class="stat-number" id="products-count">0</div>
+        <div class="stat-label">Products</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon icon-enquiries" style="background: linear-gradient(135deg, var(--success), #20c997); color: white;"></div>
+        <div class="stat-number" id="enquiries-count">0</div>
+        <div class="stat-label">Pending Enquiries</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon icon-jerseys" style="background: linear-gradient(135deg, var(--warning), #ffc107); color: #333;"></div>
+        <div class="stat-number" id="custom-count">0</div>
+        <div class="stat-label">Custom Requests</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon icon-bulk" style="background: linear-gradient(135deg, var(--danger), #fd7e14); color: white;"></div>
+        <div class="stat-number" id="bulk-count">0</div>
+        <div class="stat-label">Bulk Orders</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+  <script>initDashboard();</script>
+</body>
+</html>
