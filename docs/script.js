@@ -1,7 +1,7 @@
 // Premium Admin System JavaScript - Error-free version
 // No browser alerts/confirm, premium business logic
 
-const API_BASE = '/api';
+const API_BASE = './api';
 
 // Universal functions
 function showModal(id) {
