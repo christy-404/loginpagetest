@@ -26,9 +26,9 @@ function showToast(message, type = 'success') {
 }
 
 function checkAuth() {
-  fetch('/api/products', { credentials: 'include' })
+fetch('api/products', { credentials: 'include' })
     .catch(() => {
-      window.location.href = '/login.html';
+      window.location.href = 'login.html';
     });
 }
 
@@ -59,7 +59,7 @@ async function initLogin() {
     btn.innerHTML = '<span class="loading"></span>Entering System...';
     
     try {
-      const response = await fetch('/login', {
+const response = await fetch('login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -68,7 +68,7 @@ async function initLogin() {
       const data = await response.json();
       
       if (data.success) {
-        window.location.href = '/dashboard.html';
+window.location.href = 'dashboard.html';
       } else {
         showError('password', data.message || 'Invalid credentials');
         btn.disabled = false;
@@ -156,8 +156,8 @@ async function initQuickActions() {
 }
 
 async function logout() {
-  await fetch('/logout', { method: 'POST' });
-  window.location.href = '/login.html';
+await fetch('logout', { method: 'POST' });
+  window.location.href = 'login.html';
 }
 
 async function loadRealStats() {
